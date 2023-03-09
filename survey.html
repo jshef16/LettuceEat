@@ -5,32 +5,63 @@
     <link rel="stylesheet" href="style/main.css">
 	<title>Food Preferences Survey</title>
 </head>
-<body style="background-color: green;">
-    <div style="margin: 10%">
-	<h1>Food Preferences Survey</h1>
-	<p>Thank you for using our app! We want to ensure that we recommend restaurants and recipes that you would enjoy, so please answer the following questions:</p>
-	<form>
-        <div class="quote-box" style="height:160px">
-		<fieldset>
-			<legend>Do you have any food restrictions?</legend>
-			<label for="gluten-free"><input type="checkbox" id="gluten-free" name="food-restrictions" value="gluten-free"> Gluten-free</label><br>
-			<label for="dairy-free"><input type="checkbox" id="dairy-free" name="food-restrictions" value="dairy-free"> Dairy-free</label><br>
-			<label for="nut-free"><input type="checkbox" id="nut-free" name="food-restrictions" value="nut-free"> Nut-free</label><br>
-			<label for="other"><input type="checkbox" id="other" name="food-restrictions" value="other"> Other:</label>
-			<input type="text" id="other-restriction" name="other-restriction"><br>
-		</fieldset>
-        </div>
-        <div class="quote-box" style="height:160px">
-		<fieldset>
-			<legend>To what extent do you follow a vegan diet?</legend>
-			<label for="raw-vegan"><input type="radio" id="raw-vegan" name="vegan-diet" value="raw-vegan"> Raw Vegan</label><br>
-			<label for="whole-vegan"><input type="radio" id="whole-vegan" name="vegan-diet" value="whole-vegan"> Whole Vegan</label><br>
-			<label for="part-time-vegan"><input type="radio" id="part-time-vegan" name="vegan-diet" value="part-time-vegan"> Part-time Vegan</label><br>
-			<label for="not-vegan"><input type="radio" id="not-vegan" name="vegan-diet" value="not-vegan"> Not Vegan</label><br>
-		</fieldset>
-        </div><br>
-        <input type="button" style="margin-left: 46%; margin-right: 46%;" value="Submit">
-	</form>
+<body>
+	<header>
+		<div class="logo">
+			<a href="index.html">
+				<img src="images/green_logo.png" alt="logo" />
+			</a>
+			</div>
+			<nav>
+				<ul>
+					<li class="middle_buttons"><a href="recipe.html">Recipes</a></li>
+					<li class="middle_buttons"><a href="restaurant.html">Restaurants</a></li>
+				</ul>
+			</nav>
+			<div class="buttons">
+				<button class="signup"><a href="signup.html">Sign Up</a></button>
+				<button class="login"><a href="login.html">Login</a></button>
+			</div>
+	</header>
+    <div class='survey1'>
+		<h1>Food Preferences Survey</h1>
+		<p>Thank you for using our app! We want to ensure that we recommend restaurants and recipes that you would enjoy, so please answer the following questions:</p>
+		<form class="questions">
+			<div class="quote-box" style="height:160px">
+			<fieldset>
+				<legend>Do you have any food restrictions?</legend>
+				<label for="gluten-free"><input type="checkbox" id="gluten-free" name="food-restrictions" value="gluten-free"> Gluten-free</label><br>
+				<label for="dairy-free"><input type="checkbox" id="dairy-free" name="food-restrictions" value="dairy-free"> Dairy-free</label><br>
+				<label for="nut-free"><input type="checkbox" id="nut-free" name="food-restrictions" value="nut-free"> Nut-free</label><br>
+				<label for="other"><input type="checkbox" id="other" name="food-restrictions" value="other"> Other:</label>
+				<input type="text" id="other-restriction" name="other-restriction"><br>
+			</fieldset>
+			</div>
+			<div class="quote-box" style="height:160px">
+			<fieldset>
+				<legend>To what extent do you follow a vegan diet?</legend>
+				<label for="raw-vegan"><input type="radio" id="raw-vegan" name="vegan-diet" value="raw-vegan"> Raw Vegan</label><br>
+				<label for="whole-vegan"><input type="radio" id="whole-vegan" name="vegan-diet" value="whole-vegan"> Whole Vegan</label><br>
+				<label for="part-time-vegan"><input type="radio" id="part-time-vegan" name="vegan-diet" value="part-time-vegan"> Part-time Vegan</label><br>
+				<label for="not-vegan"><input type="radio" id="not-vegan" name="vegan-diet" value="not-vegan"> Not Vegan</label><br>
+			</fieldset>
+			</div><br>
+			<input type="button" style="margin-left: 47%; margin-right: 50%; padding: 1%;" value="Submit">
+		</form>
     </div>
+	<div class="area" >
+		<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+		</ul>
+	</div >
 </body>
 </html>
