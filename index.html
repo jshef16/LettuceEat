@@ -5,36 +5,56 @@
         <link rel="stylesheet" href="style/main.css">
         <title>LettuceEat</title>
     </head>
-
     <body>
         <div class="container">
             <header>
                 <div class="logo">
-                    <img src="images/green_logo.png" alt="logo" />
+                    <a href="index.html">
+                        <img src="images/green_logo.png" alt="logo" />
+                    </a>
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="recipe.html">Recipes</a></li>
-                            <li><a href="restaurant.html">Restaurants</a></li>
+                            <li class="middle_buttons"><a href="recipe.html">Recipes</a></li>
+                            <li class="middle_buttons"><a href="restaurant.html">Restaurants</a></li>
                         </ul>
                     </nav>
                     <div class="buttons">
-                        <button><a href="signup.html">Sign Up</a></button>
-                        <button><a href="login.html">Login</a></button>
+                        <button class="signup"><a href="signup.html">Sign Up</a></button>
+                        <button class="login"><a href="login.html">Login</a></button>
                     </div>
             </header>
             <div class="main">
                 <div class="quote-box">
                     <h1>OPEN YOUR EYES...AND YOUR MOUTH</h1>
                     <h3>Recipe and dining recommendations custom to YOU</h3>
-                    <div class="user-quote">
-                        <p>"“I never knew vegan food could taste so delicious! LettuceEat has opened my eyes to recipes that I didn&quot;t even know existed.” -Anonymous"</p>
+                    <div class="quote-container">
+                        <img src="images/headshot.jpeg" alt="Picture">
+                        <blockquote>
+                            <p>“I never knew vegan food could taste so delicious! LettuceEat</p>
+                            <p>has opened my eyes to recipes that I didn&quot;t even know existed.”</p>
+                            <cite>-Helen</cite>
+                        </blockquote>
                     </div>
                 </div>
                 <div class="quote-box">
+                    <div class="recipe-restaurant">
+                        <div class="recipe-box">
+                          <h2>Cooking</h2>
+                          <p>Find new recipes that you can make with ingredients in your fridge!</p>
+                          <button class="survey"><a href="recipe.html">Find Recipes</a></button>
+                        </div>
+                        <div class="restaurant-box">
+                          <h2>Dining</h2>
+                          <p>Find delicous vegan friendly restuarants in your neck of the woods.</p>
+                          <button class="survey"><a href="restaurant.html">Find Restaurants</a></button>
+                        </div>
+                      </div>
+                </div>
+                <div class="quote-box">
                     <h1>WANT TO GET STARTED?</h1>
-                    <h2>Take the survey and change the way you eat</h2>
-                    <button><a href="#">Let's Go!</a></button>
+                    <h2>Sign up and take the survey to change the way you eat</h2>
+                    <button class="survey"><a href="signup.html">Let's Go!</a></button>
                 </div>
             </div>
         </div>

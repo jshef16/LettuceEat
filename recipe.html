@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style/main.css">
+        <title>LettuceEat</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/green_logo.png" alt="logo" />
+                    </a>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li class="middle_buttons"><a href="recipe.html">Recipes</a></li>
+                            <li class="middle_buttons"><a href="restaurant.html">Restaurants</a></li>
+                        </ul>
+                    </nav>
+                    <div class="buttons">
+                        <button class="signup"><a href="signup.html">Sign Up</a></button>
+                        <button class="login"><a href="login.html">Login</a></button>
+                    </div>
+            </header>
+            <div class="recipe-search">
+                <div class="search-container">
+                    <h1>Search For Recipes</h1>
+                    <h3>Directions</h4>
+                    <p>In order to search for recipes enter the ingredients you want to be included in the recipe in the fields below.</p>
+                    <h4>Enter Ingredients Below</h4>
+                    <div class="search-field">
+                        <input type="text" id="search" name="search" placeholder="Ingredient">
+                        <button class="delete-button">&#x2716;</button>
+                    </div>
+                    <button class="add-button">Add Ingredient</button>
+                    <button class="search">Search</button>
+                </div>
+                <script>
+                    // Get the add button element
+                    var addButton = document.querySelector('.add-button');
+            
+                    // Add a click event listener to the add button
+                    addButton.addEventListener('click', function() {
+                        // Create a new search field element
+                        var newSearchField = document.createElement('div');
+                        newSearchField.className = 'search-field';
+            
+                        // Create an input element for the new search field
+                        var newInput = document.createElement('input');
+                        newInput.type = 'text';
+                        newInput.id = 'search-' + Date.now();
+                        newInput.name = 'search';
+                        newInput.placeholder = 'Ingredient';
+            
+                        // Create a delete button for the new search field
+                        var newDeleteButton = document.createElement('button');
+                        newDeleteButton.className = 'delete-button';
+                        newDeleteButton.innerHTML = '&#x2716;';
+            
+                        // Add the label, input, and delete button elements to the new search field element
+                        newSearchField.appendChild(newInput);
+                        newSearchField.appendChild(newDeleteButton);
+            
+                        // Get the search container element and add the new search field element to it
+                        var searchContainer = document.querySelector('.search-container');
+                        searchContainer.insertBefore(newSearchField, addButton);
+            
+                        // Add a click event listener to the new search field's delete button
+                        newDeleteButton.addEventListener('click', function() {
+                            // Remove the new search field element from the search container element
+                            searchContainer.removeChild(newSearchField);
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
