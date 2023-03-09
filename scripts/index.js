@@ -3,9 +3,9 @@ $(document).ready(function() {
         buttons = $(".buttons")
         buttons[0].style.display = "None"
         userBox = $(".userBox")
-        userBox[0].style.display = "block"
+        userBox[0].style.display = "flex"
         user = $('.user')
-        user[0].innerHTML = user[0].innerHTML + " " + getCookie('first')
+        user[0].innerHTML = user[0].innerHTML + " " + getCookie('first').trim()
         user = $(".user")
 
         $('.signout').on('click', function(event) {
@@ -33,7 +33,7 @@ function getCookie(cname) {
   function clearCookie(name) {
     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     buttons = $(".buttons")
-    buttons[0].style.display = "block"
+    buttons[0].style.display = "flex"
     userBox = $(".userBox")
     userBox[0].style.display = "none"
   }
