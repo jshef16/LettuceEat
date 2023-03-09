@@ -3,36 +3,44 @@
 
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="style/index.css">
+        <link rel="stylesheet" href="style/login-signup.css">
         <title>LettuceEat</title>
     </head>
 
     <body>
-        <h1 class="page_title">LettuceEat</h1>
-        <div class="signup-form">
-            <div class="title">Sign up</div>
-            <form id="signup">
-                <div class="input-boxes">
-                    <div class="input-box">
-                        <input type="text" id="first" placeholder="Enter your first name" required>
+        <div class="container">
+            <h1 class="page_title">Log In!</h1>
+            <div class="signup-form">
+                <form id="signup">
+                    <div class="input-boxes">
+                        <div class="input-box">
+                            <input type="email" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" id="password" placeholder="Password" required>
+                        </div>
+                        <div class="button-input-box">
+                            <input type="submit" class="submit" value="Log In">
+                        </div>
+                        <div class="text sign-up-text">Don't have an account? Sign up <a href="signup.html">now</a></div>
                     </div>
-                    <div class="input-box">
-                        <input type="text" id="last" placeholder="Enter your last name" required>
-                    </div>
-                    <div class="input-box">
-                        <input type="email" id="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="input-box">
-                        <input type="password" id="password" placeholder="Enter your password" required>
-                    </div>
-                    <div class="button input-box">
-                        <input type="submit" name="submit" class="submit">
-                    </div>
-                    <div class="text sign-up-text">Already have an account? <a href="login.html"></a></div>
-                </div>
-            </form>
-
+                </form>
+            </div>
         </div>
+        <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
         <!-- <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
         <script>
