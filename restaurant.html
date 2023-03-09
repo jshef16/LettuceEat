@@ -49,6 +49,59 @@
 			<ul class="restaurant-list">
 			  <!-- Results will be added dynamically with JavaScript -->
 			  <script>
+				const restaurantList = [
+					{
+						name: "The Lunch Room",
+						description: "A cozy, plant-based cafe with a menu of creative vegan dishes & seasonal juices, plus beer & wine.",
+						distance: "0.8 miles away",
+					},
+					{
+						name: "Seva",
+						description: "A vegan and vegetarian restaurant with an eclectic menu and a bar serving cocktails, wine and beer.",
+						distance: "1.2 miles away",
+					},
+					{
+						name: "Earthen Jar",
+						description: "Vegetarian spot offering a variety of Indian dishes at an all-you-can-eat buffet.",
+						distance: "0.9 miles away",
+					},
+					{
+						name: "Detroit Filling Station",
+						description: "Vegan diner fare & drinks in a casual setting with a bar, outdoor seating & occasional live music.",
+						distance: "2.1 miles away",
+					},
+					{
+						name: "Vedge Cafe",
+						description: "A cozy vegan cafe specializing in sandwiches, salads, smoothies, juices, and desserts.",
+						distance: "1.6 miles away",
+					},
+					{
+						name: "Jazzy Veggie",
+						description: "Vegan cafe offering plant-based versions of classic American dishes, plus smoothies & juices.",
+						distance: "0.7 miles away",
+					},
+					{
+						name: "The Beet Box",
+						description: "Casual vegan cafe with a menu of sandwiches, salads, smoothies, and baked goods.",
+						distance: "1.3 miles away",
+					},
+					{
+						name: "Blue Nile",
+						description: "Ethiopian eatery with vegan options, including a vegetarian sampler platter and a vegan lentil stew.",
+						distance: "1.8 miles away",
+					},
+					{
+						name: "Fresh Forage",
+						description: "Fast-casual restaurant offering build-your-own salads, grain bowls, and wraps with locally sourced ingredients.",
+						distance: "3.5 miles away",
+					},
+					{
+						name: "Virtuous Pie",
+						description: "Vegan pizza restaurant with creative toppings and a selection of salads, sides, and desserts.",
+						distance: "2.7 miles away",
+					}
+				];
+
 				const form = document.querySelector('form');
 				const resultsContainer = document.getElementById('results-container');
 		
@@ -60,8 +113,10 @@
 				/* ... */
 				
 				/* Display the search results */
-				const restaurantList = ['Restaurant 1', 'Restaurant 2', 'Restaurant 3', 'Restaurant 4'];
-				const restaurantListHtml = restaurantList.map(restaurant => `<li>${restaurant}</li>`).join('');
+				const restaurantListHtml = restaurantList.map(restaurant => 
+				`<li><h2>${restaurant.name}</h2>
+            	<p>${restaurant.description}</p>
+            	<p><em>${restaurant.distance}</em></p></li>`).join('');
 				resultsContainer.innerHTML = `<ul class="restaurant-list">${restaurantListHtml}</ul>`;
 				resultsContainer.style.display = 'block'; // Show the container
 				});

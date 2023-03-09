@@ -130,18 +130,22 @@
                             // Loop through the recipe data and create a list item for each recipe
                             for (var i = 0; i < data.hits.length; i++) {
                                 var recipe = data.hits[i].recipe;
-                                var recipeName = recipe.label;
-                                var recipeCalories = recipe.calories.toFixed(2);
-                                var recipeIngredients = recipe.ingredientLines;
                                 
-                                var listItem = document.createElement('li');
-                                listItem.className = 'recipe';
-                                listItem.innerHTML = '<div class="recipe-image"><img src="' + recipe.image + '" alt="' + recipeName + '" /></div><div class="recipe-info"><h2>' + recipeName + '</h2>' +
-                                                        '<p>Calories: ' + recipeCalories + '</p>' +
-                                                        '<p>Ingredients: ' + recipeIngredients + '</p></div>' +
-                                                        '<button class="view-recipe-button" onclick="window.open(\'' + recipe.url + '\', \'_blank\')">View Recipe</button></div>';
+                                if (recipe.healthLabels.includes('Vegan')) {
+                                    var recipeName = recipe.label;
+                                    var recipeCalories = recipe.calories.toFixed(2);
+                                    var recipeIngredients = recipe.ingredientLines;
+                                    
+                                    var listItem = document.createElement('li');
+                                    listItem.className = 'recipe';
+                                    listItem.innerHTML = '<div class="recipe-image"><img src="' + recipe.image + '" alt="' + recipeName + '" /></div><div class="recipe-info"><h2>' + recipeName + '</h2>' +
+                                                            '<p>Calories: ' + recipeCalories + '</p>' +
+                                                            '<p>Ingredients: ' + recipeIngredients + '</p></div>' +
+                                                            '<button class="view-recipe-button" onclick="window.open(\'' + recipe.url + '\', \'_blank\')">View Recipe</button></div>';
 
-                                recipeList.appendChild(listItem);
+                                    recipeList.appendChild(listItem);
+                                }
+                                
                             }
 
                             // Add a click event listener to all "View Recipe" buttons to open the recipe URL in a new browser tab
