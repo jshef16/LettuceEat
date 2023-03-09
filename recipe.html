@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="style/main.css">
         <title>LettuceEat</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="scripts/index.js"></script>
     </head>
 
     <body>
@@ -24,6 +26,10 @@
                         <button class="signup"><a href="signup.html">Sign Up</a></button>
                         <button class="login"><a href="login.html">Login</a></button>
                     </div>
+                    <div class="userBox">
+                        <div class="user" style="white-space: nowrap;">Hello</div>
+                        <button class="signout">Sign Out</button>
+                    </div>
             </header>
             <div class="recipe-search">
                 <div class="search-container">
@@ -37,41 +43,120 @@
                     </div>
                     <button class="add-button">Add Ingredient</button>
                     <button class="search">Search</button>
+                    <h1 class="result-header">
+                        Results
+                    </h1>
+                </div>
+                <div class="recipe-search-results-container">
+                    
                 </div>
                 <script>
                     // Get the add button element
                     var addButton = document.querySelector('.add-button');
-            
+
                     // Add a click event listener to the add button
                     addButton.addEventListener('click', function() {
                         // Create a new search field element
                         var newSearchField = document.createElement('div');
                         newSearchField.className = 'search-field';
-            
+
                         // Create an input element for the new search field
                         var newInput = document.createElement('input');
                         newInput.type = 'text';
                         newInput.id = 'search-' + Date.now();
                         newInput.name = 'search';
                         newInput.placeholder = 'Ingredient';
-            
+
                         // Create a delete button for the new search field
                         var newDeleteButton = document.createElement('button');
                         newDeleteButton.className = 'delete-button';
                         newDeleteButton.innerHTML = '&#x2716;';
-            
+
                         // Add the label, input, and delete button elements to the new search field element
                         newSearchField.appendChild(newInput);
                         newSearchField.appendChild(newDeleteButton);
-            
+
                         // Get the search container element and add the new search field element to it
                         var searchContainer = document.querySelector('.search-container');
                         searchContainer.insertBefore(newSearchField, addButton);
-            
+
                         // Add a click event listener to the new search field's delete button
                         newDeleteButton.addEventListener('click', function() {
                             // Remove the new search field element from the search container element
                             searchContainer.removeChild(newSearchField);
+                        });
+                    });
+
+                    // Get the search button element
+                    var searchButton = document.querySelector('.search');
+
+                    // Add a click event listener to the search button
+                    searchButton.addEventListener('click', function() {
+                        results_header = $(".result-header")
+                        results_header[0].style.display = "flex"
+                        // Get the recipe search results container element
+                        var recipeSearchResultsContainer = document.querySelector('.recipe-search-results-container');
+
+                        // Remove any existing recipe elements from the recipe search results container
+                        var existingRecipes = document.querySelectorAll('.recipe-list');
+                        for (var i = 0; i < existingRecipes.length; i++) {
+                            recipeSearchResultsContainer.removeChild(existingRecipes[i]);
+                        }
+
+                        // Get all search fields
+                        var searchFields = document.querySelectorAll('.search-field input');
+
+                        // Build the API request URL
+                        var appId = 'f0961734';
+                        var appKey = '92e6060a6889f0a33bf4805c97f1adea';
+                        var ingredients = []
+                        for (var i = 0; i < searchFields.length; i++) {
+                            ingredients.push(searchFields[i].value)
+                        }
+                        var apiUrl = `https://api.edamam.com/search?q=${encodeURIComponent(ingredients.join(','))}&app_id=${appId}&app_key=${appKey}&from=0&to=20`
+                        console.log(apiUrl)
+
+                        // Send the API request
+                        $.ajax({
+                            url: apiUrl,
+                            method: 'GET'
+                        }).done(function(data) {
+                            // Get the recipe list container element
+                            var recipeListContainer = document.createElement('div');
+                            recipeListContainer.className = 'recipe-list-container';
+                            var recipeList = document.createElement('ul');
+                            recipeList.className = 'recipe-list';
+
+                            // Loop through the recipe data and create a list item for each recipe
+                            for (var i = 0; i < data.hits.length; i++) {
+                                var recipe = data.hits[i].recipe;
+                                var recipeName = recipe.label;
+                                var recipeCalories = recipe.calories.toFixed(2);
+                                var recipeIngredients = recipe.ingredientLines;
+                                
+                                var listItem = document.createElement('li');
+                                listItem.className = 'recipe';
+                                listItem.innerHTML = '<div class="recipe-image"><img src="' + recipe.image + '" alt="' + recipeName + '" /></div><div class="recipe-info"><h2>' + recipeName + '</h2>' +
+                                                        '<p>Calories: ' + recipeCalories + '</p>' +
+                                                        '<p>Ingredients: ' + recipeIngredients + '</p></div>' +
+                                                        '<button class="view-recipe-button" onclick="window.open(\'' + recipe.url + '\', \'_blank\')">View Recipe</button></div>';
+
+                                recipeList.appendChild(listItem);
+                            }
+
+                            // Add a click event listener to all "View Recipe" buttons to open the recipe URL in a new browser tab
+                            var viewRecipeButtons = document.querySelectorAll('.view-recipe-button');
+                            for (var i = 0; i < viewRecipeButtons.length; i++) {
+                                var viewRecipeButton = viewRecipeButtons[i];
+                                viewRecipeButton.addEventListener('click', function() {
+                                    var recipeUrl = this.getAttribute('data-recipe-url');
+                                    window.open(recipeUrl, '_blank');
+                                });
+                            }
+
+                            // Get the recipe search results container and append the recipe list to it
+                            var recipeSearchResultsContainer = document.querySelector('.recipe-search-results-container');
+                            recipeSearchResultsContainer.appendChild(recipeList);
                         });
                     });
                 </script>
