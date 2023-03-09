@@ -44,7 +44,7 @@ header {
     margin-left: 20px;
   }
 
-  .main{
+  .main {
         position: absolute;
         top: 100px; /* Adjust this value to match the height of your header */
         left: 0;
@@ -52,7 +52,6 @@ header {
         height: 100%; 
         background-image: url("../images/vegetables.jpeg");
         background-size: cover;
-        opacity: 0.6;
   }
 
   .quote-box {
@@ -60,16 +59,45 @@ header {
     border: 1px solid #ddd;
     height: 250px;
     padding: 20px;
- 
     text-align: center;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
     border-radius: 15px;
   }
 
-  .quote-box div {
+  .quote-box h3 {
+    margin-top: 15px;
+  }
+
+  .quote-box h2 {
+    margin-top: 15px;
+  }
+
+  .quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 30px;
+  }
+
+  .quote-container img {
+    height: 80px;
+    width: 80px;
+    border-radius: 60%;
+  }
+  
+  blockquote {
+    margin-left: 20px;
+  }
+  
+  blockquote p {
+    font-size: 18px;
+    font-style: italic;
+  }
+  
+  cite {
+    font-size: 16px;
   }
 
   .quote-box button {
@@ -116,10 +144,7 @@ header {
   }
 
   .middle_buttons:hover {
-    padding-left: 40px;
-    padding-right: 40px;
-    /* padding-top: 20px;
-    padding-bottom: 20px; */
+    background-color: tan;
   }
 
   .survey a {
@@ -132,7 +157,6 @@ header {
 
   .survey {
     background-color: #004f1e;
-
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 15px;
@@ -153,7 +177,13 @@ header {
     margin-top: 25px;
 }
 
+.search-container p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .search-container h4 {
+    margin-top: 25px;
     margin-bottom: 25px;
 }
 
@@ -207,4 +237,63 @@ header {
     border-radius: 4px;
 }
 
+.recipe-restaurant {
+    display: flex;
+    justify-content: center;
+  }
   
+  .recipe-box {
+    width: 45%;
+    background-color: rgb(134, 241, 95);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+  
+  .recipe-box h2 {
+    margin-top: 0;
+  }
+  
+  .recipe-box button {
+    background-color: #004f1e;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+  .restaurant-box {
+    width: 45%;
+    background-color: rgb(134, 241, 95);;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-left: 10px;
+  }
+  
+  .restaurant-box h2 {
+    margin-top: 0;
+  }
+  
+  .restaurant-box button {
+    background-color: #004f1e;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+  }
