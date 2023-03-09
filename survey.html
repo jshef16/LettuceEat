@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="style/main.css">
 	<title>Food Preferences Survey</title>
+    <script src="scripts/survey.js"></script>
 </head>
 <body>
 	<header>
@@ -23,10 +24,13 @@
 				<button class="login"><a href="login.html">Login</a></button>
 			</div>
 	</header>
+	<script>
+		
+	</script>
     <div class='survey1'>
 		<h1>Food Preferences Survey</h1>
 		<p>Thank you for using our app! We want to ensure that we recommend restaurants and recipes that you would enjoy, so please answer the following questions:</p>
-		<form class="questions">
+		<form class="questions" id="food-preferences-form">
 			<div class="quote-box" style="height:160px">
 			<fieldset>
 				<legend>Do you have any food restrictions?</legend>
@@ -46,7 +50,7 @@
 				<label for="not-vegan"><input type="radio" id="not-vegan" name="vegan-diet" value="not-vegan"> Not Vegan</label><br>
 			</fieldset>
 			</div><br>
-			<input type="button" style="margin-left: 47%; margin-right: 50%; padding: 1%;" value="Submit">
+			<input class="submit" type="button" style="margin-left: 47%; margin-right: 50%; padding: 1%;" value="Submit">
 		</form>
     </div>
 	<div class="area" >
