@@ -6,6 +6,14 @@ $(document).ready(function() {
       setCookie('first', first, 0.5)
     });
   });
+
+  $(document).ready(function() {
+    $('#signin').on('submit', function(event) {
+      event.preventDefault(); // prevent the default form submission behavior
+      window.location.href = 'index.html';
+      setCookie('first', 'John', 0.5)
+    });
+  });
   
 
   function setCookie(cname, cvalue, exdays) {

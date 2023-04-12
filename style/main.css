@@ -92,6 +92,18 @@ nav a {
   border-radius: 15px;
 }
 
+.quote-box1 {
+  background-color: rgb(193, 190, 190);
+  border: 1px solid #ddd;
+  height: 25%;
+  padding: 20px;
+  text-align: center;
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 15px;
+}
+
 .quote-box h3 {
   margin-top: 1%;
 }
@@ -455,8 +467,12 @@ cite {
   margin: 2%;
   position: absolute;
   z-index: 1;
-  background-color: transparent;
+  background-color: white;
 }  
+
+.survey1 form {
+  padding-bottom: 50px;
+}
 
 .questions {
     padding-left: 25%;
@@ -524,3 +540,31 @@ cite {
     padding: 1%;
     margin-bottom: 2%;
   }
+
+  .checked {
+    color: orange;
+  }
+
+  .restaurant-list img {
+    width: 30%;
+    height: 30%;
+    border-radius: 8px;
+    object-fit: cover;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .restaurant-list p {
+    padding-bottom: 1%;
+  }
+
+  .restaurant-list button {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: #004f1e; 
+    color: white; 
+    font-size: medium;
+  }
+
+  

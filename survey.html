@@ -34,7 +34,7 @@
 		<h1>Food Preferences Survey</h1>
 		<p>Thank you for using our app! We want to ensure that we recommend restaurants and recipes that you would enjoy, so please answer the following questions:</p>
 		<form class="questions" id="food-preferences-form">
-			<div class="quote-box" style="height:160px">
+			<div class="quote-box1">
 			<fieldset>
 				<legend>Do you have any food restrictions?</legend>
 				<label for="gluten-free"><input type="checkbox" id="gluten-free" name="food-restrictions" value="gluten-free"> Gluten-free</label><br>
@@ -44,7 +44,7 @@
 				<input type="text" id="other-restriction" name="other-restriction"><br>
 			</fieldset>
 			</div>
-			<div class="quote-box" style="height:160px">
+			<div class="quote-box1">
 			<fieldset>
 				<legend>To what extent do you follow a vegan diet?</legend>
 				<label for="raw-vegan"><input type="radio" id="raw-vegan" name="vegan-diet" value="raw-vegan"> Raw Vegan</label><br>
@@ -52,23 +52,58 @@
 				<label for="part-time-vegan"><input type="radio" id="part-time-vegan" name="vegan-diet" value="part-time-vegan"> Part-time Vegan</label><br>
 				<label for="not-vegan"><input type="radio" id="not-vegan" name="vegan-diet" value="not-vegan"> Not Vegan</label><br>
 			</fieldset>
+			</div>
+			<div class="quote-box1">
+				<fieldset>
+					<legend>What type of cuisine are you interested in?</legend>
+					<label for="cuisine-american"><input type="checkbox" id="cuisine-american" name="cuisine" value="american"> American</label><br>
+					<label for="cuisine-mexican"><input type="checkbox" id="cuisine-mexican" name="cuisine" value="mexican"> Mexican</label><br>
+					<label for="cuisine-italian"><input type="checkbox" id="cuisine-italian" name="cuisine" value="italian"> Italian</label><br>
+					<label for="cuisine-asian"><input type="checkbox" id="cuisine-asian" name="cuisine" value="asian"> Asian</label><br>
+					<label for="cuisine-middle-eastern"><input type="checkbox" id="cuisine-middle-eastern" name="cuisine" value="middle-eastern"> Middle Eastern</label><br>
+					<label for="cuisine-african"><input type="checkbox" id="cuisine-african" name="cuisine" value="african"> African</label><br>
+					<label for="cuisine-other"><input type="radio" id="cuisine-other" name="cuisine" value="other"> Other:</label>
+					<input type="text" id="other-cuisine" name="other-cuisine"><br>
+				</fieldset>
+			</div>
+			<div class="quote-box1">
+				<fieldset>
+					<legend>What is your favorite type of protein?</legend>
+					<label for="protein-beans"><input type="radio" id="protein-beans" name="protein" value="beans"> Beans</label><br>
+					<label for="protein-tofu"><input type="radio" id="protein-tofu" name="protein" value="tofu"> Tofu</label><br>
+					<label for="protein-seitan"><input type="radio" id="protein-seitan" name="protein" value="seitan"> Seitan</label><br>
+					<label for="protein-mushrooms"><input type="radio" id="protein-mushrooms" name="protein" value="mushrooms"> Mushrooms</label><br>
+					<label for="protein-other"><input type="radio" id="protein-other" name="protein" value="other"> Other:</label>
+					<input type="text" id="other-protein" name="other-protein"><br>
+				</fieldset>
+			</div>
+			<div class="quote-box1">
+				<fieldset>
+					<legend>Do you prefer sweet or savory dishes?</legend>
+					<label for="sweet"><input type="radio" id="sweet" name="dish-preference" value="sweet"> Sweet</label><br>
+					<label for="savory"><input type="radio" id="savory" name="dish-preference" value="savory"> Savory</label><br>
+					<label for="both"><input type="radio" id="both" name="dish-preference" value="both"> Both equally</label><br>
+				</fieldset>
+			</div>
+			<div class="quote-box1">
+				<fieldset>
+					<legend>What level cook are you?</legend>
+					<label for="beginner"><input type="radio" id="beginner" name="cooking-level" value="beginner"> Beginner</label><br>
+					<label for="intermediate"><input type="radio" id="intermediate" name="cooking-level" value="intermediate"> Intermediate</label><br>
+					<label for="advanced"><input type="radio" id="advanced" name="cooking-level" value="advanced"> Advanced</label><br>
+				</fieldset>
+			</div>
+			<div class="quote-box1">
+				<fieldset>
+					<legend>How far are you willing to go for a restaurant?</legend>
+					<label for="nearby"><input type="radio" id="nearby" name="distance" value="nearby"> Within 1 mile</label><br>
+					<label for="close"><input type="radio" id="close" name="distance" value="close"> Within 5 miles</label><br>
+					<label for="moderate"><input type="radio" id="moderate" name="distance" value="moderate"> Within 10 miles</label><br>
+					<label for="far"><input type="radio" id="far" name="distance" value="far"> More than 10 miles</label><br>
+				</fieldset>
 			</div><br>
-			<input class="submit1" type="button" style="margin-left: 47%; margin-right: 50%; padding: 1%;" value="Submit">
+			<input class="submit1" type="button" style="margin-left: 46%; margin-right: 50%; padding: 1%; background-color: #004f1e; color: white; font-size: medium;" value="Submit">
 		</form>
     </div>
-	<div class="area" >
-		<ul class="circles">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-		</ul>
-	</div >
 </body>
 </html>

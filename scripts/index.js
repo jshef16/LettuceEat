@@ -31,10 +31,9 @@ function getCookie(cname) {
   }
 
   function clearCookie(name) {
-    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    buttons = $(".buttons")
-    buttons[0].style.display = "flex"
-    userBox = $(".userBox")
-    userBox[0].style.display = "none"
+    var d = new Date();
+    d.setTime(d.getTime() - (1 * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = name + "=" + document.cookie + ";" + expires + ";path=/";
+    location.reload();
   }
-  

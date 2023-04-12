@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>LettuceEat</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
         <script src="scripts/index.js"></script>
@@ -51,6 +52,26 @@
                     
                 </div>
                 <script>
+                    const deleteButtons = document.querySelectorAll('.delete-button');
+
+                    deleteButtons.forEach(deleteButton => {
+                        deleteButton.addEventListener('click', () => {
+                            // Get the parent element (search field) of the clicked delete button
+                            const searchField = deleteButton.parentElement;
+
+                            // Check if there are more than one search fields in the document
+                            const searchFields = document.querySelectorAll('.search-field');
+                            if (searchFields.length > 1) {
+                            // Remove the parent element (search field) of the clicked delete button
+                            searchField.remove();
+                            } else {
+                            // If there's only one search field, clear its input value
+                            const searchInput = searchField.querySelector('input');
+                            searchInput.value = '';
+                            }
+                        });
+                    });
+
                     // Get the add button element
                     var addButton = document.querySelector('.add-button');
 
@@ -141,13 +162,14 @@
                                     listItem.innerHTML = '<div class="recipe-image"><img src="' + recipe.image + '" alt="' + recipeName + '" /></div><div class="recipe-info"><h2>' + recipeName + '</h2>' +
                                                             '<p>Calories: ' + recipeCalories + '</p>' +
                                                             '<p>Ingredients: ' + recipeIngredients + '</p></div>' +
-                                                            '<button class="view-recipe-button" onclick="window.open(\'' + recipe.url + '\', \'_blank\')">View Recipe</button></div>';
+                                                            '<button class="view-recipe-button" data-recipe-url="' + recipe.url + '">View Recipe</button></div>' +
+                                                            '<div><h3>Rate This Recipe</h3><br>' + 
+                                                            '<span class="fa fa-star" data-recipe-id="' + i + '" data-star-id="1"></span><span class="fa fa-star" data-recipe-id="' + i + '" data-star-id="2"></span><span class="fa fa-star" data-recipe-id="' + i + '" data-star-id="3"></span><span class="fa fa-star" data-recipe-id="' + i + '" data-star-id="4"></span><span class="fa fa-star" data-recipe-id="' + i + '" data-star-id="5"></span></div><br><br>';
 
                                     recipeList.appendChild(listItem);
                                 }
-                                
                             }
-
+                            
                             // Add a click event listener to all "View Recipe" buttons to open the recipe URL in a new browser tab
                             var viewRecipeButtons = document.querySelectorAll('.view-recipe-button');
                             for (var i = 0; i < viewRecipeButtons.length; i++) {
@@ -161,6 +183,29 @@
                             // Get the recipe search results container and append the recipe list to it
                             var recipeSearchResultsContainer = document.querySelector('.recipe-search-results-container');
                             recipeSearchResultsContainer.appendChild(recipeList);
+
+                            var recipes = document.querySelectorAll('.recipe');
+
+                            recipes.forEach(function(recipe) {
+                                var stars = recipe.querySelectorAll('.fa-star');
+
+                                stars.forEach(function(star, index) {
+                                    star.addEventListener('click', function() {
+                                        var clickedRecipeId = recipe.getAttribute('id');
+                                        var clickedStarNumber = index + 1;
+
+                                        console.log("Clicked recipe ID: " + clickedRecipeId + ", Star number: " + clickedStarNumber);
+
+                                        for (var i = 0; i <= index; i++) {
+                                            stars[i].classList.add('checked');
+                                        }
+
+                                        for (var i = index + 1; i < stars.length; i++) {
+                                            stars[i].classList.remove('checked');
+                                        }
+                                    });
+                                });
+                            });
                         });
                     });
                 </script>
